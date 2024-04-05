@@ -10,7 +10,7 @@ Development Tools:
 - React
 - TypeScript
 - Ant like a design system
-- Styeld component
+- Styled component
 - Redux-Toolkit
 
 The app has been implemented for Desctop/Mobile view.
