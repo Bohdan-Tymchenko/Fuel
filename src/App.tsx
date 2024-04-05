@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Layout } from "antd";
 
-function App() {
+import Dashboard from "./pages/Dashboard";
+import Trade from "./pages/Trade";
+import Earn from "./pages/Earn";
+import Faucet from "./pages/Faucet";
+import Docs from "./pages/Docs";
+import More from "./pages/More";
+import Header from "./components/header/header";
+import ConnectionInfo from "./components/connectionInfo/connectionInfo";
+
+import { GlobalStyle } from "./styles/globalStyles";
+
+const { Content } = Layout;
+
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Layout>
+        <Header />
+        <Content>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/trade" element={<Trade />} />
+            <Route path="/earn" element={<Earn />} />
+            <Route path="/faucet" element={<Faucet />} />
+            <Route path="/docs" element={<Docs />} />
+            <Route path="/more" element={<More />} />
+          </Routes>
+        </Content>
+        <ConnectionInfo />
+      </Layout>
+    </>
   );
 }
 
